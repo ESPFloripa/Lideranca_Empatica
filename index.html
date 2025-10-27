@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula: Liderança Empática</title>
+    <!-- Carrega o Tailwind CSS para estilos modernos --><script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define a fonte Inter como padrão */
+        html {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Aplica a fonte Inter - é preciso importá-la */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-blue-100 min-h-screen antialiased">
+
+    <!-- Modal de Senha -->
+    <div id="passwordModal" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/75 p-4 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-md p-8 rounded-xl shadow-2xl text-center">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Acesso Restrito</h2>
+            <p class="text-gray-600 mb-6">Por favor, insira a senha para ver o conteúdo da aula.</p>
+            <input type="password" id="passwordInput" class="w-full px-4 py-3 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Senha">
+            <button id="passwordButton" class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg mt-6 text-lg hover:bg-blue-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                Entrar
+            </button>
+            <p id="errorMessage" class="text-red-600 text-sm mt-4 hidden">Senha incorreta. Tente novamente.</p>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal (Oculto por padrão) -->
+    <div id="mainContent" class="container mx-auto max-w-4xl p-4 sm:p-8" style="display: none;">
+
+        <!-- Cabeçalho da Aula (Modificado com imagem de fundo SEM desfoque) --><header class="mb-10 text-center rounded-xl shadow-lg overflow-hidden relative py-16 sm:py-20" 
+                style="background-image: url('https://i.imgur.com/IpI2RDD.jpeg'); background-size: cover; background-position: center;">
+            
+            <!-- Sobreposição escura para legibilidade (sem desfoque) --><div class="absolute inset-0 bg-black/50"></div>
+
+            <!-- Conteúdo do Cabeçalho --><div class="relative z-10 px-4">
+                <h1 class="text-4xl sm:text-5xl font-bold text-yellow-400 mb-2 shadow-sm">Liderança Empática</h1>
+                <p class="text-xl text-gray-200 shadow-sm">Escola de Saúde Pública de Florianópolis</p>
+                <p class="text-md text-gray-300 mt-2">Atividades prévias (EAD) - Tempo total estimado: 120 minutos</p>
+            </div>
+        </header>
+
+        <!-- Grade de Atividades --><div class="space-y-8">
+
+            <!-- Atividade 1: Leitura --><section class="bg-white p-6 sm:p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-blue-800">1ª Atividade - Leitura</h2>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-1.5 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        30 minutos
+                    </span>
+                </div>
+                <h3 class="text-xl font-medium text-gray-900 mb-3">A empatia como instrumento de gestão</h3>
+                <p class="text-gray-700 leading-relaxed mb-5">
+                    Ler o artigo "A empatia como instrumento de gestão" de Aline da Silva Coelho. Caso prefira fazer uma leitura mais concentrada, leia ao menos do fim da página 31 até o fim da página 38.
+                </p>
+                <a href="https://drive.google.com/file/d/1L1LPTyevhjOHzgB1H06OPL1k6q6OGI-Z/view?usp=sharing" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-white font-semibold shadow-md transition-all duration-300 hover:bg-blue-700 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    Acessar Leitura
+                </a>
+            </section>
+
+            <!-- Atividade 2: Vídeos --><section class="bg-white p-6 sm:p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-blue-800">2ª Atividade - Vídeos</h2>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-1.5 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        20 minutos
+                    </span>
+                </div>
+                <p class="text-gray-700 leading-relaxed mb-5">
+                    Assista aos 2 vídeos clicando nos links abaixo:
+                </p>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-medium text-gray-900 mb-3">1. Brené Brown Sobre empatia</h3>
+                        <!-- Wrapper responsivo para vídeo --><div class="relative w-full overflow-hidden rounded-lg shadow-md" style="padding-top: 56.25%;"> <!-- 16:9 Aspect Ratio --><iframe src="https://www.youtube.com/embed/P75sxFhor6c" 
+                                    title="Brené Brown Sobre empatia" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen
+                                    class="absolute top-0 left-0 w-full h-full">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-medium text-gray-900 mb-3">2. Empatia saudável pode salvar vidas</h3>
+                        <!-- Vídeo 2 atualizado --><div class="relative w-full overflow-hidden rounded-lg shadow-md" style="padding-top: 56.25%;"> <!-- 16:9 Aspect Ratio --><iframe src="https://www.youtube.com/embed/ZGOpa5NUaXU" 
+                                    title="Empatia saudável pode salvar vidas" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen
+                                    class="absolute top-0 left-0 w-full h-full">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Atividade 3: Reflexiva --><section class="bg-white p-6 sm:p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-green-800">3ª Atividade - Atividade reflexiva</h2>
+                    <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-1.5 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        20 minutos
+                    </span>
+                </div>
+                <h3 class="text-xl font-medium text-gray-900 mb-3">O impacto da empatia (ou da falta dela na sua vida profissional)</h3>
+                <p class="text-gray-700 leading-relaxed mb-3">
+                    Todos nós já fomos impactados em maior ou menor grau por ações em que a empatia ou a falta dela nos influenciaram no ambiente de trabalho. Reflita sobre suas histórias e tente lembrar de algum episódio onde a empatia ou a falta da mesma desempenhou um papel importante no ambiente de trabalho.
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-3">
+                    Pode ser algo que ocorreu diretamente com você ou com algum colega, faça uma reflexão sobre o papel da liderança nesse episódio, se essa atuação foi positiva ou negativa e se foi negativa como poderia ter sido melhor abordada.
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-5">
+                    Vamos utilizar esse exercício para analisar os fatores que contribuem para uma liderança empática que atua de forma efetiva. Para isso, utilizaremos perguntas guias que ajudam a promover uma validação prática do conteúdo teórico.
+                </p>
+                <a href="https://forms.gle/N5vDUtvAr5J4LqjW6" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 rounded-lg bg-green-600 px-5 py-3 text-white font-semibold shadow-md transition-all duration-300 hover:bg-green-700 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                    </svg>
+                    Acessar Formulário de Reflexão
+                </a>
+            </section>
+
+            <!-- Atividade 4: Vídeo --><section class="bg-white p-6 sm:p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-blue-800">4ª Atividade - Vídeo</h2>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-1.5 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        25 minutos
+                    </span>
+                </div>
+                <h3 class="text-xl font-medium text-gray-900 mb-3">Entendendo Empatia - Simon Sinek</h3>
+                <p class="text-gray-700 leading-relaxed mb-5">
+                    Assista ao vídeo "Entendendo Empatia" de Simon Sinek.
+                </p>
+                <!-- Wrapper responsivo para vídeo --><div class="relative w-full overflow-hidden rounded-lg shadow-md" style="padding-top: 56.25%;"> <!-- 16:9 Aspect Ratio --><iframe src="https://www.youtube.com/embed/mD4EjIv-qvg" 
+                            title="Entendendo Empatia - Simon Sinek" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen
+                            class="absolute top-0 left-0 w-full h-full">
+                    </iframe>
+                </div>
+            </section>
+
+            <!-- Atividade 5: Reflexiva --><section class="bg-white p-6 sm:p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-semibold text-green-800">5ª Atividade - Liderança Empática na Gestão Pública</h2>
+                    <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-1.5 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block mr-1.5 -mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        25 minutos
+                    </span>
+                </div>
+                <p class="text-gray-700 leading-relaxed mb-3">
+                    Como vocês puderam ouvir no TED Talk de Simon Sinek a empatia é essencial para a liderança nas organizações, mas ele fala boa parte do tempo do ponto de vista de empresas privadas voltadas ao lucro onde a competição é um fator bastante presente.
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-3">
+                    Gostaria que você refletisse sobre a importância da empatia para a liderança partindo do ponto de vista das organizações/instituições públicas em que vocês trabalham, ela é mais ou menos importante que em uma instituição privada, há diferenças entre as duas realidades, se sim quais?
+                </p>
+                <a href="https://forms.gle/5vZP8rDqWSB93rRS9" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 rounded-lg bg-green-600 px-5 py-3 text-white font-semibold shadow-md transition-all duration-300 hover:bg-green-700 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                    </svg>
+                    Acessar Formulário de Reflexão 2
+                </a>
+            </section>
+
+            <!-- Conclusão --><section class="bg-blue-50 p-6 sm:p-8 rounded-xl border-2 border-blue-200">
+                <h2 class="text-2xl font-semibold text-blue-900 mb-3">Próximos Passos</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Uma cópia das suas respostas a ambos os formulários será enviada para o seu e-mail. Essa resposta será importante para utilizar no encontro presencial, então não apague a mensagem.
+                </p>
+                <p class="text-gray-700 leading-relaxed mt-2">
+                    A aula terá um fechamento coletivo no próximo encontro presencial.
+                </p>
+            </section>
+
+        </div>
+
+        <!-- Rodapé --><footer class="mt-12 py-6 text-center text-gray-500 text-sm">
+            <p>&copy; 2024 Escola de Saúde Pública de Florianópolis. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
+    <!-- Script da Senha -->
+    <script>
+        document.getElementById('passwordButton').addEventListener('click', function() {
+            var input = document.getElementById('passwordInput');
+            var modal = document.getElementById('passwordModal');
+            var content = document.getElementById('mainContent');
+            var error = document.getElementById('errorMessage');
+
+            // Verifica se a senha está correta
+            if (input.value === 'esp2025') {
+                // Senha correta: esconde o modal e mostra o conteúdo
+                modal.style.display = 'none';
+                content.style.display = 'block';
+            } else {
+                // Senha incorreta: mostra mensagem de erro
+                error.classList.remove('hidden');
+                input.value = ''; // Limpa o campo
+                input.focus(); // Foca no campo novamente
+            }
+        });
+
+        // Opcional: Permite pressionar "Enter" para enviar
+        document.getElementById('passwordInput').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Impede o comportamento padrão do Enter (se houver)
+                document.getElementById('passwordButton').click();
+            }
+        });
+    </script>
+
+</body>
+</html>
+
