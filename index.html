@@ -17,15 +17,27 @@
 <body class="bg-gradient-to-br from-gray-50 to-blue-100 min-h-screen antialiased">
 
     <!-- Modal de Senha -->
-    <div id="passwordModal" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/75 p-4 backdrop-blur-sm">
-        <div class="bg-white w-full max-w-md p-8 rounded-xl shadow-2xl text-center">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">Acesso Restrito</h2>
-            <p class="text-gray-600 mb-6">Por favor, insira a senha para ver o conteúdo da aula.</p>
+    <div id="passwordModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 relative" style="background-image: url('https://i.imgur.com/IpI2RDD.jpeg'); background-size: cover; background-position: center;">
+        <!-- Sobreposição escura -->
+        <div class="absolute inset-0 bg-black/60"></div>
+
+        <!-- Conteúdo do Modal (Card Transparente) -->
+        <div class="relative z-10 w-full max-w-md p-8 rounded-xl text-center">
+            
+            <!-- Novos Textos da Capa -->
+            <p class="text-lg font-medium text-gray-200">Especialização em Liderança e Gestão em Saúde</p>
+            <h2 class="text-4xl sm:text-5xl font-bold text-yellow-400 my-3">Liderança Ética</h2>
+            <p class="text-md text-gray-300 mb-6">Escola de Saúde Pública de Florianópolis</p>
+            
+            <p class="text-sm text-gray-200 mb-4">Conteúdo restrito aos alunos regularmente matriculados no curso.</p>
+            <p class="text-gray-300 mb-6">Por favor, insira a senha para acessar esta aula.</p>
+
+            <!-- Campos de Senha -->
             <input type="password" id="passwordInput" class="w-full px-4 py-3 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Senha">
             <button id="passwordButton" class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg mt-6 text-lg hover:bg-blue-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                 Entrar
             </button>
-            <p id="errorMessage" class="text-red-600 text-sm mt-4 hidden">Senha incorreta. Tente novamente.</p>
+            <p id="errorMessage" class="text-red-400 text-sm mt-4 hidden">Senha incorreta. Tente novamente.</p>
         </div>
     </div>
 
@@ -236,4 +248,5 @@
 
 </body>
 </html>
+
 
